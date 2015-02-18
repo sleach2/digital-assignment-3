@@ -8,13 +8,11 @@ window.onload = function() {
         game.load.image( 'bricks', 'assets/bricks.png' );
     }
     
-    var bouncy;
     
     function create() {
         game.add.sprite(0,0,'bricks');
     }
     
     function update() {
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     }
 };
