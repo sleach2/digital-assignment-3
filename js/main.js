@@ -35,12 +35,13 @@ window.onload = function() {
         }else if (move.right.isDown){ 
              player.body.velocity.x = 250; 
              player.animations.play('right'); 
-         }else{ 
+        }else if(move.up.isDown){
+            player.body.velocity.y=-250;
+        }else if(move.down.isDown){
+            player.body.velocity.y=250;
+        }else{ 
              player.animations.stop(); 
              player.frame = 4; 
          } 
-         if (move.up.isDown){ 
-            player.body.velocity.y = -250; 
-        } 
     }
 };
