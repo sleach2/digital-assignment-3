@@ -2,18 +2,18 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 1500, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         game.load.image( 'bricks', 'assets/bricks.png' );
         game.load.image('dude2', 'assets/dude2.png');
         game.load.image('man','assets/man.png');
-        game.load.image('player', 'assets/player.png');
+        game.load.image('enemy', 'assets/player.png');
     }
     
     var player;
     var move;
-    var land
+    var land;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.P2JS);
@@ -24,6 +24,7 @@ window.onload = function() {
         game.physics.p2.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
+        game.camera.follow(player);
     }
     
     function update() {
