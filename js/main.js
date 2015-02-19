@@ -11,11 +11,12 @@ window.onload = function() {
     
     var player;
     var move;
+    var land
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.world.setBounds(-1000, -1000, 2000, 2000);
-        game.add.sprite(0,0,800,600'bricks');
+        land=game.add.sprite(0,0,800,600,'bricks');
         load.fixedToCamera=true;
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         player.body.collideWorldBounds = true;
