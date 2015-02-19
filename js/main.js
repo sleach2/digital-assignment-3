@@ -56,7 +56,7 @@ window.onload = function() {
         }else if(move.down.isDown){
             player.body.velocity.y += 250;
         }
-        enemies.forEach(function(enemy) {this.moveToObject(enemy, player, 20);}, game.physics);
+        //enemies.forEach(function(enemy) {this.moveToObject(enemy, player, 20);}, game.physics);
         /*if(game.physics.arcade.collide(player, door)){
             game.add.text(160, 150, 'You Win!', { fontSize: '64px', fill: '#000' });
         }
