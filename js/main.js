@@ -9,7 +9,6 @@ window.onload = function() {
         game.load.image('dude2', 'assets/dude2.png');
         game.load.image('man','assets/man.png');
         game.load.image('enemy','assets/player.png');
-        game.load.image('door', 'assets/door.png');
     }
     
     var player=null;
@@ -18,15 +17,11 @@ window.onload = function() {
     var enemies;
     var timer;
     var total=0;
-    var door;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,1500,700,'bricks');
         land.fixedToCamera=true;
-        door=game.add.sprite(1400,600,'door');
-        //game.physics.enable(door, Phaser.Physics.ARCADE);
-        //door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
         player = game.add.sprite(0, 0, 'dude2');
