@@ -12,7 +12,7 @@ window.onload = function() {
         game.load.image('door', 'assets/door.png');
     }
     
-    var player=null;
+    var player;
     var move;
     var land;
     var enemies;
