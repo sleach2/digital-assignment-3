@@ -29,6 +29,7 @@ window.onload = function() {
     
     function update() {
         player.body.velocity.x = 0;
+        player.body.velocity.y = 0;
         if (move.left.isDown){ 
              player.body.velocity.x = -250; 
              player.animations.play('left'); 
