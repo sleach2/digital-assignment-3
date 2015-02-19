@@ -24,12 +24,12 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        /*door=game.add.sprite(1500,700,'door');
+        door=game.add.sprite(1500,700,'door');
         game.physics.enable(door,Phaser.Physics.ARCADE);
         door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
-        game.physics.enable(enemies,Phaser.Physics.ARCADE);*/
+        game.physics.enable(enemies,Phaser.Physics.ARCADE);
         player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
         game.physics.enable(player,Phaser.Physics.ARCADE);
