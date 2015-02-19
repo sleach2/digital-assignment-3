@@ -26,7 +26,7 @@ window.onload = function() {
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
+        game.camera.deadzone = new Phaser.Rectangle(0, 0, 2000, 2000);
         game.camera.focusOnXY(0, 0);
     }
     
