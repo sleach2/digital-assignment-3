@@ -9,7 +9,7 @@ window.onload = function() {
         game.load.image('dude2', 'assets/dude2.png');
         game.load.image('man','assets/man.png');
         game.load.image('enemy','assets/player.png');
-        //game.load.image('door', 'assets/door.png');
+        game.load.image('door', 'assets/door.png');
     }
     
     var player=null;
@@ -18,13 +18,13 @@ window.onload = function() {
     var enemies;
     var timer;
     var total=0;
-    //var door;
+    var door;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        //door=game.add.sprite(1400,600,'door');
+        door=game.add.sprite(1400,600,'door');
         //game.physics.enable(door, Phaser.Physics.ARCADE);
         //door.body.immovable=true;
         enemies=game.add.group();
@@ -57,13 +57,11 @@ window.onload = function() {
             player.body.velocity.y += 250;
         }
         //enemies.forEach(function(enemy) {this.moveToObject(enemy, player, 20);}, game.physics);
-        /*if(game.physics.arcade.collide(player, door)){
+        if(game.physics.arcade.collide(player, door)){
             game.add.text(160, 150, 'You Win!', { fontSize: '64px', fill: '#000' });
-            player.kill();
         }
         if(game.physics.arcade.collide(player, enemies)){
             game.add.text(160, 150, 'You Lose!', { fontSize: '64px', fill: '#000' });
-            player.kill();
-        }*/
+        }
     }
 };
