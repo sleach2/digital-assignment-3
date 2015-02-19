@@ -38,8 +38,8 @@ window.onload = function() {
         timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
-        music=game.add.audio('bks',1,true);
-        music.play('',0,1,true);
+        music=game.add.audio('bks');
+        music.play();
     }
 
     function spawn(){
