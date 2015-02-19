@@ -21,13 +21,13 @@ window.onload = function() {
         land.fixedToCamera=true;
         player = game.add.sprite(0, 0, 'dude2');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
-        player.anchor.setTo(0.5,0.5);
+        //player.anchor.setTo(0.5,0.5);
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        //game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
-        //game.camera.focusOnXY(0, 0);
+        game.camera.deadzone = new Phaser.Rectangle(150, 150, 500, 300);
+        game.camera.focusOnXY(0, 0);
     }
     
     function update() {
