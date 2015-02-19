@@ -17,7 +17,7 @@ window.onload = function() {
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.world.setBounds(0, 0, 2000, 2000);
-        land=game.add.tileSprite(0,0,800,600,'bricks');
+        land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
         player = game.add.sprite(0, 0, 'dude2');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
