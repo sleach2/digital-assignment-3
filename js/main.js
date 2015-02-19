@@ -19,7 +19,7 @@ window.onload = function() {
         game.world.setBounds(0, 0, 2000, 2000);
         land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(0, 0, 'man');
+        player = game.add.sprite(0, 0, 'dude2');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
         player.anchor.setTo(0.5,0.5);
         game.physics.arcade.enable(player);
@@ -27,12 +27,13 @@ window.onload = function() {
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
         game.camera.deadzone = new Phaser.Rectangle(0, 0, 2000, 2000);
-        game.camera.focusOnXY(player.x, player.y);
+        
     }
     
     function update() {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
+        game.camera.focusOnXY(player.x, player.y);
         if (move.left.isDown){ 
             player.body.velocity.x -= 250; 
         }else if (move.right.isDown){ 
