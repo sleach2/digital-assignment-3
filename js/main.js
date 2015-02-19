@@ -15,33 +15,35 @@ window.onload = function() {
     var land
 
     function create() {
-        game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.physics.startSystem(Phaser.Physics.P2JS);
         game.world.setBounds(0, 0, 2000, 2000);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(0, 0, 'man');
+        player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
-        game.physics.arcade.enable(player);
+        game.physics.p2.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(2000, 2000, 2000, 2000);
+        game.camera.deadzone = new Phaser.Rectangle(0, 0, 2000, 2000);
         game.camera.focusOnXY(player.x, player.y);
     }
     
     function update() {
-        player.body.velocity.x = 0;
-        player.body.velocity.y = 0;
+        player.body.setZeroVelocity();
         
         if (move.left.isDown){ 
-            player.body.velocity.x -= 250; 
+            player.body.velocity.x = -250; 
         }else if (move.right.isDown){ 
-            player.body.velocity.x += 250;
+            //player.body.velocity.x += 250;
+            player.body.moveRight(250);
         }    
          if(move.up.isDown){
-            player.body.velocity.y -= 250;
+            //player.body.velocity.y -= 250;
+            player.body.moveUp(250);
         }else if(move.down.isDown){
-            player.body.velocity.y += 250;
+            //player.body.velocity.y += 250;
+            player.body.moveDown(250);
         }
     }
 };
