@@ -67,8 +67,8 @@ window.onload = function() {
         if(game.physics.arcade.collide(player, door)){
             game.add.text(500, 5000, 'You Win!', { fontSize: '128px', fill: '#000' });
         }
-        /*if(game.physics.arcade.collide(player, enemies)){
+        if(game.physics.arcade.collide(player, enemies)){
             game.add.text(160, 150, 'You Lose!', { fontSize: '64px', fill: '#000' });
-        }*/
+        }
     }
 };
