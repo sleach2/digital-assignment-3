@@ -24,7 +24,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        door=game.add.sprite(1450,650,'door');
+        door=game.add.sprite(1425,625,'door');
         //door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
