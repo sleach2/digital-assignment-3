@@ -46,7 +46,7 @@ window.onload = function() {
     }
 
     function spawn(){
-        enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        var enemy = enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
     }
     
@@ -70,7 +70,7 @@ window.onload = function() {
         }
         if(game.physics.arcade.collide(player, enemies)){
             game.add.text(160, 150, 'You Lose!', { fontSize: '128px', fill: '#000' });
-            enemies.kill();
+            enemy.kill();
         }
     }
 };
