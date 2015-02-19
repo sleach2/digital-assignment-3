@@ -39,7 +39,7 @@ window.onload = function() {
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         timer = game.time.create(false);
-        timer.loop(2000, spawn, this);
+        timer.loop(500, spawn, this);
         timer.start();
         
     }
