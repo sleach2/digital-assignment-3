@@ -19,7 +19,7 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.P2JS);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(0, 0, 'player');
+        player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
         game.physics.p2.enable(player);
         player.body.collideWorldBounds = true;
@@ -27,7 +27,9 @@ window.onload = function() {
     }
     
     function update() {
-        player.body.setZeroVelocity();   
+        //player.body.setZeroVelocity();
+        player.body.velocity.x=0;
+        player.body.velocity.y=0;   
         if (move.left.isDown){ 
             player.body.velocity.x = -250; 
         }else if (move.right.isDown){ 
