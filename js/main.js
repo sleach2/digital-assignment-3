@@ -30,6 +30,7 @@ window.onload = function() {
         land.fixedToCamera=true;
         door=game.add.sprite(1425,625,'door');
         game.physics.enable(door,Phaser.Physics.ARCADE);
+        door.enableBody=true;
         door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
