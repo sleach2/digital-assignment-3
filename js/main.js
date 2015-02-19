@@ -22,6 +22,7 @@ window.onload = function() {
         player = game.add.sprite(32, game.world.height - 150, 'dude2');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
         game.physics.arcade.enable(player);
+        player.anchor.setTo(0.5,0.5);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
