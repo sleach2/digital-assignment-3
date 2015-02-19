@@ -19,7 +19,7 @@ window.onload = function() {
         game.world.setBounds(0, 0, 2000, 2000);
         land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(0, 0, 'dude2');
+        player = game.add.sprite(0, 0, 'man');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
         //player.anchor.setTo(0.5,0.5);
         game.physics.arcade.enable(player);
