@@ -14,10 +14,9 @@ window.onload = function() {
     var player;
     var move;
     var land;
-    var enemy;
+    var enemies;
     var timer;
     var total=0;
-    var se;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -39,7 +38,7 @@ window.onload = function() {
     }
 
     function spawn(){
-        enemy.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
     }
     
@@ -60,8 +59,8 @@ window.onload = function() {
             player.body.velocity.y += 250;
             //player.body.moveDown(250);
         }
-        //enemy.forEach(se){game.physics.accelerateToObject(se,player,50+Math.random()*100);},this);
-        game.physics.moveToXY(enemy,player.x,player.y,100);
+        enemies.forEach(enemy){game.physics.accelerateToObject(enemy,player,50+Math.random()*100);},this);
+        //game.physics.moveToXY(enemy,player.x,player.y,100);
     }
 
     /*function render() {
