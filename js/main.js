@@ -7,6 +7,7 @@ window.onload = function() {
     function preload() {
         game.load.image( 'bricks', 'assets/bricks.png' );
         game.load.image('dude', 'assets/dude.png',32,48);
+        game.load.image('man','assets/man.png');
     }
     
     var player;
@@ -18,7 +19,7 @@ window.onload = function() {
         game.world.setBounds(-1000, -1000, 2000, 2000);
         land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(32, game.world.height - 150, 'dude');
+        player = game.add.sprite(32, game.world.height - 150, 'man');
         game.physics.enable(player, Phaser.Physics.ARCADE)
         player.body.collideWorldBounds = true;
         //player.animations.add('left', [0, 1, 2, 3], 10, true);
