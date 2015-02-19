@@ -17,6 +17,7 @@ window.onload = function() {
     var enemies;
     var timer;
     var total=0;
+    var enemy;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
