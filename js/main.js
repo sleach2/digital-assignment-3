@@ -22,8 +22,8 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        enemy=game.add.group();
-        enemy.enableBody=true;
+        enemies=game.add.group();
+        enemies.enableBody=true;
         player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
         game.physics.enable(player,Phaser.Physics.ARCADE);
