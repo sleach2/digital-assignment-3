@@ -15,11 +15,14 @@ window.onload = function() {
     var move;
     var land;
     var enemy;
+    var timer;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
+        enemy=game.add.group();
+        enemy.enableBody=true;
         player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
         game.physics.enable(player,Phaser.Physics.ARCADE);
@@ -28,6 +31,13 @@ window.onload = function() {
         /*game.camera.follow(player);
         game.camera.deadzone = new Phaser.Rectangle(100, 100, 800, 600);
         game.camera.focusOnXY(player.x, player.y);*/
+        timer = game.time.create(false);
+        timer.loop(2000, spawn, this);
+        timer.start();
+    }
+    
+    function spawn(){
+        enemy.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
     }
     
     function update() {
