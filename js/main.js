@@ -40,7 +40,7 @@ window.onload = function() {
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         timer = game.time.create(false);
-        timer.loop(500, spawn, this);
+        timer.loop(250, spawn, this);
         timer.start();
         
     }
@@ -65,7 +65,7 @@ window.onload = function() {
             player.body.velocity.y += 250;
         }
         //enemies.forEachAlive(function(enemy){ this.moveToObject(enemy, player, 20);}, game.physics);
-        enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},20,this);},this);
+        enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},200,this);},this);
         if(game.physics.arcade.collide(player, door)){
             game.add.text(500, 5000, 'You Win!', { fontSize: '128px', fill: '#000' });
         }
