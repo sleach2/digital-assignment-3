@@ -8,34 +8,34 @@ window.onload = function() {
         game.load.image( 'bricks', 'assets/bricks.png' );
         game.load.image('dude2', 'assets/dude2.png');
         game.load.image('man','assets/man.png');
-        game.load.image('enemy','assets/player.png');
-        game.load.image('door', 'assets/door.png');
+        //game.load.image('enemy','assets/player.png');
+        //game.load.image('door', 'assets/door.png');
     }
     
     var player;
     var move;
     var land;
-    var enemies;
+    /*var enemies;
     var timer;
     var total=0;
-    var door;
+    var door;*/
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        door=game.add.sprite(1500,700,'door');
+        /*door=game.add.sprite(1500,700,'door');
         game.physics.enable(door,Phaser.Physics.ARCADE);
         door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
-        game.physics.enable(enemies,Phaser.Physics.ARCADE);
+        game.physics.enable(enemies,Phaser.Physics.ARCADE);*/
         player = game.add.sprite(0, 0, 'dude2');
         player.anchor.setTo(0.5,0.5);
         game.physics.enable(player,Phaser.Physics.ARCADE);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
-        timer = game.time.create(false);
+        /*timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
     }
@@ -43,7 +43,7 @@ window.onload = function() {
     function spawn(){
         enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
-    }
+    }*/
     
     function update() {
         player.body.setZeroVelocity();
