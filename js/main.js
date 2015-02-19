@@ -59,7 +59,10 @@ window.onload = function() {
             player.body.velocity.y += 250;
             //player.body.moveDown(250);
         }
-        enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player,600,250,250);},this);
+        enemies.forEach(
+            function(enemy) {
+                game.physics.moveToObject(enemy, player, 20);
+            }, this);
     }
 
     /*function render() {
