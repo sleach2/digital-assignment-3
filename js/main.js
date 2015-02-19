@@ -21,8 +21,8 @@ window.onload = function() {
         player = game.add.sprite(32, game.world.height - 150, 'dude');
         game.physics.enable(player, Phaser.Physics.ARCADE)
         player.body.collideWorldBounds = true;
-        player.animations.add('left', [0, 1, 2, 3], 10, true);
-        player.animations.add('right', [5, 6, 7, 8], 10, true);
+        //player.animations.add('left', [0, 1, 2, 3], 10, true);
+        //player.animations.add('right', [5, 6, 7, 8], 10, true);
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
     }
@@ -32,14 +32,14 @@ window.onload = function() {
         player.body.velocity.y = 0;
         if (move.left.isDown){ 
              player.body.velocity.x = -250; 
-             player.animations.play('left'); 
+             //player.animations.play('left'); 
         }else if (move.right.isDown){ 
              player.body.velocity.x = 250; 
-             player.animations.play('right'); 
-        }else{ 
+             //player.animations.play('right'); 
+        }/*else{ 
              player.animations.stop(); 
              player.frame = 4; 
-         } 
+         } */
          if(move.up.isDown){
             player.body.velocity.y=-250;
         }
