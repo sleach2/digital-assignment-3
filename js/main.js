@@ -10,6 +10,7 @@ window.onload = function() {
         game.load.image('man','assets/man.png');
         game.load.image('enemy','assets/player.png');
         game.load.image('door', 'assets/door.png');
+        game.load.audio('bks','assets/eerie.wav');
     }
     
     var player;
@@ -19,6 +20,7 @@ window.onload = function() {
     var timer;
     var total=0;
     var door;
+    var music;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -36,6 +38,8 @@ window.onload = function() {
         timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
+        music=game.add.audio('bks',1,true);
+        music.play('',0,1,true);
     }
 
     function spawn(){
