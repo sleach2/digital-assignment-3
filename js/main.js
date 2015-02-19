@@ -16,7 +16,7 @@ window.onload = function() {
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        game.world.setBounds(-1000, -1000, 2000, 2000);
+        //game.world.setBounds(-1000, -1000, 2000, 2000);
         land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
         player = game.add.sprite(32, game.world.height - 150, 'man');
