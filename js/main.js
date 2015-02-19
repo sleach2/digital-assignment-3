@@ -61,8 +61,8 @@ window.onload = function() {
         }
         enemies.forEach(
             function(enemy) {
-                game.physics.moveToObject(enemy, player, 20);
-            }, this);
+                this.moveToObject(enemy, player, 20);
+            }, game.physics);
     }
 
     /*function render() {
