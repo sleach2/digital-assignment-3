@@ -27,13 +27,13 @@ window.onload = function() {
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
         game.camera.deadzone = new Phaser.Rectangle(0, 0, 2000, 2000);
-        
+        game.camera.focusOnXY(player.x, player.y);
     }
     
     function update() {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
-        game.camera.focusOnXY(player.x, player.y);
+        
         if (move.left.isDown){ 
             player.body.velocity.x -= 250; 
         }else if (move.right.isDown){ 
