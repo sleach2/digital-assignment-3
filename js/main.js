@@ -22,7 +22,7 @@ window.onload = function() {
         player = game.add.sprite(32, game.world.height - 150, 'man');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
         game.physics.arcade.enable(player);
-        player.body.collideWorldBounds = true;
+        player.body.collideWorldBounds = false;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
     }
@@ -38,7 +38,7 @@ window.onload = function() {
          if(move.up.isDown){
             player.body.velocity.y -= 250;
         }else if(move.down.isDown){
-            player.body.velocity.y = 250;
+            player.body.velocity.y += 250;
         }
     }
 };
