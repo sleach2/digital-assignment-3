@@ -11,7 +11,7 @@ window.onload = function() {
         game.load.image('enemy','assets/player.png');
     }
     
-    var player;
+    var player=null;
     var move;
     var land;
     var enemies;
@@ -40,7 +40,7 @@ window.onload = function() {
     }
 
     function spawn(){
-        var t = enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
     }
     
@@ -61,12 +61,7 @@ window.onload = function() {
             player.body.velocity.y += 250;
             //player.body.moveDown(250);
         }
-        //enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player.body,50+Math.random()*100);},game.physics);
-        //game.physics.moveToXY(enemy,player.x,player.y,100);
-        if(t.x<player.x){
-            t.x;
-        }
-
+        enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player,600,250,250);},game.physics);
     }
 
     /*function render() {
