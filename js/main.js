@@ -16,6 +16,7 @@ window.onload = function() {
     var land;
     var enemy;
     var timer;
+    var total=0;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -35,9 +36,10 @@ window.onload = function() {
         timer.loop(2000, spawn, this);
         timer.start();
     }
-    
+
     function spawn(){
         enemy.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        total++;
     }
     
     function update() {
@@ -58,4 +60,11 @@ window.onload = function() {
             //player.body.moveDown(250);
         }
     }
+
+    function render() {
+
+    game.debug.text('Time until event: ' + timer.duration.toFixed(0), 32, 32);
+    game.debug.text('Loop Count: ' + total, 32, 64);
+
+}
 };
