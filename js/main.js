@@ -2,7 +2,7 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 1500, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     
     function preload() {
         game.load.image( 'bricks', 'assets/bricks.png' );
@@ -16,7 +16,6 @@ window.onload = function() {
 
     function create() {
         game.physics.startSystem(Phaser.Physics.P2JS);
-        game.world.setBounds(0, 0, 2000, 2000);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
         player = game.add.sprite(0, 0, 'man');
@@ -24,9 +23,6 @@ window.onload = function() {
         game.physics.p2.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
-        game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(100, 100, 800, 600);
-        game.camera.focusOnXY(player.x, player.y);
     }
     
     function update() {
