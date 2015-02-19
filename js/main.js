@@ -17,12 +17,12 @@ window.onload = function() {
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.world.setBounds(0, 0, 2000, 2000);
-        land=game.add.tileSprite(0,0,2000,2000,'bricks');
+        land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(32, game.world.height - 150, 'man');
+        player = game.add.sprite(0, 0, 'dude2');
         //game.physics.enable(player, Phaser.Physics.ARCADE)
-        game.physics.arcade.enable(player);
         player.anchor.setTo(0.5,0.5);
+        game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
