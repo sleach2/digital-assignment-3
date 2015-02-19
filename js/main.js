@@ -21,6 +21,7 @@ window.onload = function() {
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
         player = game.add.sprite(0, 0, 'dude2');
+        player.anchor.setTo(0.5,0.5);
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
