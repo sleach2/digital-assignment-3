@@ -44,7 +44,9 @@ window.onload = function() {
     }
     
     function update() {
-        player.body.setZeroVelocity();
+        //player.body.setZeroVelocity();
+        player.body.velocity.x=0;
+        player.body.velocity.y=0;
         if (move.left.isDown){ 
             player.body.velocity.x -= 250; 
         }else if (move.right.isDown){ 
