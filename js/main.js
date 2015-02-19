@@ -17,7 +17,6 @@ window.onload = function() {
     var enemies;
     var timer;
     var total=0;
-    var gs=false;
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -36,7 +35,6 @@ window.onload = function() {
         timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
-        gs=true;
     }
 
     function spawn(){
@@ -61,7 +59,7 @@ window.onload = function() {
             player.body.velocity.y += 250;
             //player.body.moveDown(250);
         }
-        enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player,600,250,250);},game.physics);
+        enemies.forEach(function(enemy){this.accelerateToObject(enemy,player,600,250,250);},game.physics);
     }
 
     /*function render() {
