@@ -59,8 +59,13 @@ window.onload = function() {
             player.body.velocity.y += 250;
             //player.body.moveDown(250);
         }
-        enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player.body,50+Math.random()*100);},game.physics);
+        //enemies.forEach(function(enemy){game.physics.accelerateToObject(enemy,player.body,50+Math.random()*100);},game.physics);
         //game.physics.moveToXY(enemy,player.x,player.y,100);
+        enemies.forEach(
+            function(singleEnemy) {
+                this.moveToObject(singleEnemy, player, 20);
+            }, game.physics);
+
     }
 
     /*function render() {
