@@ -24,9 +24,9 @@ window.onload = function() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        door=game.add.sprite(1400,600,'door');
-        game.physics.enable(door, Phaser.Physics.ARCADE);
-        door.body.immovable=true;
+        //door=game.add.sprite(1400,600,'door');
+        //game.physics.enable(door, Phaser.Physics.ARCADE);
+        //door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
         player = game.add.sprite(0, 0, 'dude2');
@@ -59,7 +59,7 @@ window.onload = function() {
         //enemies.forEach(function(enemy) {this.moveToObject(enemy, player, 20);}, game.physics);
         if(game.physics.arcade.collide(player, door)){
             game.add.text(160, 150, 'You Win!', { fontSize: '64px', fill: '#000' });
-            player.kill()
+            player.kill();
         }
         if(game.physics.arcade.collide(player, enemies)){
             game.add.text(160, 150, 'You Lose!', { fontSize: '64px', fill: '#000' });
