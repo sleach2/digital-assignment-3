@@ -25,8 +25,6 @@ window.onload = function() {
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
         door=game.add.sprite(1500,700,'door');
-        game.physics.enable(door,Phaser.Physics.ARCADE);
-        door.body.immovable=true;
         enemies=game.add.group();
         enemies.enableBody=true;
         player = game.add.sprite(0, 0, 'dude2');
@@ -34,7 +32,7 @@ window.onload = function() {
         game.physics.enable(player,Phaser.Physics.ARCADE);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
-        /*timer = game.time.create(false);
+        timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
     }
@@ -42,7 +40,7 @@ window.onload = function() {
     function spawn(){
         enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
-    }*/
+    }
     
     function update() {
         player.body.setZeroVelocity();
