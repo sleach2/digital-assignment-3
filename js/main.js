@@ -19,13 +19,13 @@ window.onload = function() {
         game.world.setBounds(0, 0, 2000, 2000);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
-        player = game.add.sprite(0, 0, 'dude2');
+        player = game.add.sprite(0, 0, 'man');
         player.anchor.setTo(0.5,0.5);
         game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
-        game.camera.deadzone = new Phaser.Rectangle(2000, 2000, 1, 1);
+        game.camera.deadzone = new Phaser.Rectangle(2000, 2000, 2000, 2000);
         game.camera.focusOnXY(player.x, player.y);
     }
     
