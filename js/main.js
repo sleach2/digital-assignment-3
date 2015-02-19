@@ -46,7 +46,7 @@ window.onload = function() {
     }
 
     function spawn(){
-        var enemy = enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        enemies.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
     }
     
@@ -64,7 +64,8 @@ window.onload = function() {
         }else if(move.down.isDown){
             player.body.velocity.y += 250;
         }
-        //enemies.forEach(function(enemy) {this.moveToObject(enemy, player, 20);}, game.physics);
+        //enemies.forEachAlive(function(enemy){ this.moveToObject(enemy, player, 20);}, game.physics);
+        //enemies.forEachAlive(function(enemy){ game.physics.arcade.moveToObject(enemy, {x:player.x, y:player.y},20,this);
         if(game.physics.arcade.collide(player, door)){
             game.add.text(500, 5000, 'You Win!', { fontSize: '128px', fill: '#000' });
         }
