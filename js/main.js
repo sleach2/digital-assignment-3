@@ -11,6 +11,7 @@ window.onload = function() {
     
     function create() {
         game.add.sprite(0,0,'bricks');
+        load.fixedToCamera=true;
     }
     
     function update() {
