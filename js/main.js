@@ -70,7 +70,7 @@ window.onload = function() {
         }
         if(game.physics.arcade.collide(player, enemies)){
             game.add.text(160, 150, 'You Lose!', { fontSize: '128px', fill: '#000' });
-            enemy.kill();
+            enemies.kill();
         }
     }
 };
