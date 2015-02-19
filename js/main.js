@@ -22,7 +22,7 @@ window.onload = function() {
 
     function create() {
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        land=game.add.tileSprite(0,0,2000,2000,'bricks');
+        land=game.add.tileSprite(0,0,1500,700,'bricks');
         land.fixedToCamera=true;
         door=game.add.sprite(1400,600,'door');
         //game.physics.enable(door, Phaser.Physics.ARCADE);
