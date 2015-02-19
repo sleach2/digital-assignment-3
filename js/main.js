@@ -24,7 +24,7 @@ window.onload = function() {
 
     function create() {
         music=game.add.audio('bks');
-        music.play();
+        music.play('',0,0.5,true);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
