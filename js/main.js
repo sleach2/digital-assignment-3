@@ -17,14 +17,28 @@ window.onload = function() {
         game.world.setBounds(-1000, -1000, 2000, 2000);
         game.add.sprite(0,0,800,600'bricks');
         load.fixedToCamera=true;
-        player = game.add.sprite(32, game.world.height - 150, 'cat1');
+        player = game.add.sprite(32, game.world.height - 150, 'dude');
         player.body.collideWorldBounds = true;
-        player.animations.add('left',[0,1],10,true);
-        player.animations.add('right',[3,4],10,true);
+        player.animations.add('left', [0, 1, 2, 3], 10, true);
+        player.animations.add('right', [5, 6, 7, 8], 10, true);
         move = game.input.keyboard.createCursorKeys();
         game.camera.follow(player);
     }
     
     function update() {
+        player.body.velocity.x = 0;
+        if (move.left.isDown){ 
+             player.body.velocity.x = -250; 
+             player.animations.play('left'); 
+        }else if (move.right.isDown){ 
+             player.body.velocity.x = 250; 
+             player.animations.play('right'); 
+         }else{ 
+             player.animations.stop(); 
+             player.frame = 4; 
+         } 
+         if (move.up.isDown){ 
+            player.body.velocity.y = -250; 
+        } 
     }
 };
