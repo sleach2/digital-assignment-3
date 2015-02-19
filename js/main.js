@@ -10,7 +10,7 @@ window.onload = function() {
         game.load.image('man','assets/man.png');
         game.load.image('enemy','assets/player.png');
         game.load.image('door', 'assets/door.png');
-        game.load.audio('bks','assets/eerie.wav');
+        game.load.audio('bks','assets/eerie.mp3');
     }
     
     var player;
@@ -23,6 +23,8 @@ window.onload = function() {
     var music;
 
     function create() {
+        music=game.add.audio('bks');
+        music.play();
         game.physics.startSystem(Phaser.Physics.ARCADE);
         land=game.add.tileSprite(0,0,2000,2000,'bricks');
         land.fixedToCamera=true;
@@ -38,8 +40,7 @@ window.onload = function() {
         timer = game.time.create(false);
         timer.loop(2000, spawn, this);
         timer.start();
-        music=game.add.audio('bks');
-        music.play();
+        
     }
 
     function spawn(){
