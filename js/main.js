@@ -15,12 +15,13 @@ window.onload = function() {
     var land
 
     function create() {
-        //game.physics.startSystem(Phaser.Physics.ARCADE);
+        game.physics.startSystem(Phaser.Physics.ARCADE);
         game.world.setBounds(-1000, -1000, 2000, 2000);
         land=game.add.tileSprite(0,0,800,600,'bricks');
         land.fixedToCamera=true;
         player = game.add.sprite(32, game.world.height - 150, 'man');
-        game.physics.enable(player, Phaser.Physics.ARCADE)
+        //game.physics.enable(player, Phaser.Physics.ARCADE)
+        game.physics.arcade.enable(player);
         player.body.collideWorldBounds = true;
         //player.animations.add('left', [0, 1, 2, 3], 10, true);
         //player.animations.add('right', [5, 6, 7, 8], 10, true);
