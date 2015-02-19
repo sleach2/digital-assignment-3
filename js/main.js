@@ -39,7 +39,7 @@ window.onload = function() {
     }
 
     function spawn(){
-        se=enemy.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
+        enemy.create(game.rnd.integerInRange(0,game.world.width),game.rnd.integerInRange(0,game.world.height-150),'enemy');
         total++;
     }
     
@@ -61,7 +61,7 @@ window.onload = function() {
             //player.body.moveDown(250);
         }
         //enemy.forEach(se){game.physics.accelerateToObject(se,player,50+Math.random()*100);},this);
-        game.physics.moveToXY(se,player.x,player.y,100);
+        game.physics.moveToXY(enemy,player.x,player.y,100);
     }
 
     /*function render() {
