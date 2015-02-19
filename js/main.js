@@ -33,20 +33,20 @@ window.onload = function() {
         player.body.velocity.x = 0;
         player.body.velocity.y = 0;
         if (move.left.isDown){ 
-             player.body.velocity.x = -250; 
+             player.body.velocity.x += -250; 
              //player.animations.play('left'); 
         }else if (move.right.isDown){ 
-             player.body.velocity.x = 250; 
+             player.body.velocity.x += 250; 
              //player.animations.play('right'); 
         }/*else{ 
              player.animations.stop(); 
              player.frame = 4; 
          } */
          if(move.up.isDown){
-            player.body.velocity.y=-250;
+            player.body.velocity.y += -250;
         }
         if(move.down.isDown){
-            player.body.velocity.y=250;
+            player.body.velocity.y = 250;
         }
     }
 };
